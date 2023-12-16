@@ -20,11 +20,9 @@ const { title, description, duration } = request.body
 })
 
 server.get('/videos', (request) => {
-    const search = request.query
+    const search = request.query.search
 
-    console.log(search)
-
-    const videos = database.list()
+    const videos = database.list(search)
     return videos
 })
 
